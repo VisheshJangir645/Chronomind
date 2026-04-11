@@ -1,8 +1,9 @@
+--extra-index-url https://download.pytorch.org/whl/cpu
 fastapi==0.110.0
 uvicorn==0.27.1
 pydantic==2.6.3
 transformers==4.38.2
-torch==2.2.1
+torch
 python-dateutil==2.9.0
 python-multipart==0.0.9
 numpy>=1.26.0
