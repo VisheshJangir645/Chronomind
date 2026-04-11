@@ -23,7 +23,7 @@ function App() {
     try {
       const response = await axios.post('https://chronomind-backend.onrender.com/api/v1/query', {
         query: query.trim()
-      }, { timeout: 30000 });
+      }, { timeout: 60000 });
       
       const data = response.data;
       setEvents(data.events || []);
