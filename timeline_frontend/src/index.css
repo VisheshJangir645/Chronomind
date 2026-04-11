@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Premium global transition — covers bg, text, borders, fills */
+*,
+*::before,
+*::after {
+  transition:
+    background-color 300ms ease,
+    color 300ms ease,
+    border-color 300ms ease,
+    fill 300ms ease,
+    stroke 300ms ease,
+    box-shadow 300ms ease;
+}
+
+/* Override transitions on elements where it causes layout jank */
+input, textarea, button, a {
+  transition:
+    background-color 200ms ease,
+    color 200ms ease,
+    border-color 200ms ease,
+    box-shadow 200ms ease,
+    transform 150ms ease,
+    opacity 200ms ease;
+}
+
+@layer utilities {
+  /* Light mode glass */
+  .glass {
+    background: rgba(255, 255, 255, 0.72);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.04);
+  }
+}
+
+/* Dark mode glass — soft glow instead of sharp shadow */
+.dark .glass {
+  background: rgba(26, 35, 58, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 2px 24px rgba(59, 130, 246, 0.06);
+}
