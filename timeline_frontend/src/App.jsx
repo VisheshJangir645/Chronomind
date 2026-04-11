@@ -21,7 +21,7 @@ function App() {
     setMeta({ topic: '', summary: '', thumbnail: '', images: [] });
     
     try {
-      const response = await axios.post('http://localhost:8000/api/v1/query', {
+      const response = await axios.post('https://chronomind-backend.onrender.com/api/v1/query', {
         query: query.trim()
       }, { timeout: 30000 });
       
